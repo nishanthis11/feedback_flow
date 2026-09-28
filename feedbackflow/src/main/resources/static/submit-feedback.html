@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FeedbackFlow — Submit Feedback</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="ff-navbar">
+  <div class="brand"><i class="bi bi-mortarboard-fill"></i> Course Feedback Collection System</div>
+  <div class="nav-right">
+    <div class="theme-toggle" id="themeToggle">
+      <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+      <div class="theme-switch"></div>
+      <span id="themeLabel" class="small d-none d-sm-inline">Light</span>
+    </div>
+    <span><i class="bi bi-person-circle me-1"></i> <span id="navUserName">...</span></span>
+  </div>
+</div>
+
+<div class="ff-layout">
+  <div class="ff-sidebar">
+    <a href="student-dashboard.html"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="student-dashboard.html"><i class="bi bi-journal-bookmark-fill"></i> My Courses</a>
+    <a href="#" class="active"><i class="bi bi-pencil-square"></i> Submit Feedback</a>
+    <a href="#"><i class="bi bi-chat-square-text-fill"></i> My Feedback</a>
+    <a href="#"><i class="bi bi-person-fill"></i> Profile</a>
+    <a href="#" id="logoutLink"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </div>
+
+  <div class="ff-main">
+    <div class="ff-card" style="max-width:760px;">
+      <h4 class="mb-3">Submit Course Feedback</h4>
+
+      <div id="formStatusBanner"></div>
+
+      <div id="courseInfo" class="ff-course-card d-flex align-items-center gap-3 mb-4" style="background:var(--bg-surface-alt);">
+        <div class="ff-icon-badge mb-0"><i class="bi bi-code-slash"></i></div>
+        <div>
+          <div class="fw-semibold" id="courseTitle">Loading course...</div>
+          <div class="text-muted-ff small" id="facultyLine"></div>
+        </div>
+      </div>
+
+      <form id="feedbackForm">
+        <div id="questionsContainer"><!-- questions injected here --></div>
+
+        <div class="d-flex gap-2 mt-4">
+          <a href="student-dashboard.html" class="btn btn-ff-outline flex-fill">Cancel</a>
+          <button type="submit" class="btn btn-ff-primary flex-fill" id="submitBtn">
+            <i class="bi bi-send-fill me-1"></i> Submit Feedback
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/student-submit.js"></script>
+</body>
+</html>

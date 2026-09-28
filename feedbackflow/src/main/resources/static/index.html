@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FeedbackFlow — Login</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="ff-navbar">
+  <div class="brand"><i class="bi bi-mortarboard-fill"></i> FeedbackFlow</div>
+  <div class="nav-right">
+    <div class="theme-toggle" id="themeToggle">
+      <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+      <div class="theme-switch"></div>
+      <span id="themeLabel" class="small">Light</span>
+    </div>
+  </div>
+</div>
+
+<div class="ff-login-wrap" style="min-height: calc(100vh - 60px);">
+  <div class="ff-login-card">
+    <div class="text-center mb-4">
+      <div class="ff-icon-badge mx-auto" style="width:56px;height:56px;font-size:1.6rem;">
+        <i class="bi bi-mortarboard-fill"></i>
+      </div>
+
+      <h4 class="mt-3 mb-1">Welcome to FeedbackFlow</h4>
+
+      <p class="text-muted-ff small mb-0">
+        Course Feedback Collection System
+      </p>
+    </div>
+
+    <form id="loginForm">
+      <div class="mb-3">
+        <label class="form-label small">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="you@feedbackflow.edu"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="••••••••"
+          required>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-ff-primary w-100 py-2"
+        id="loginBtn">
+        <i class="bi bi-box-arrow-in-right me-1"></i>
+        Sign In
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

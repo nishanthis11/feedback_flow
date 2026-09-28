@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FeedbackFlow — Student Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="ff-navbar">
+  <div class="brand"><i class="bi bi-mortarboard-fill"></i> Course Feedback Collection System</div>
+  <div class="nav-right">
+    <div class="theme-toggle" id="themeToggle">
+      <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+      <div class="theme-switch"></div>
+      <span id="themeLabel" class="small d-none d-sm-inline">Light</span>
+    </div>
+    <span><i class="bi bi-person-circle me-1"></i> <span id="navUserName">...</span></span>
+  </div>
+</div>
+
+<div class="ff-layout">
+  <div class="ff-sidebar">
+    <a href="student-dashboard.html" class="active"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="student-dashboard.html"><i class="bi bi-journal-bookmark-fill"></i> My Courses</a>
+    <a href="student-dashboard.html"><i class="bi bi-pencil-square"></i> Submit Feedback</a>
+    <a href="#" id="myFeedbackLink"><i class="bi bi-chat-square-text-fill"></i> My Feedback</a>
+    <a href="#"><i class="bi bi-person-fill"></i> Profile</a>
+    <a href="#" id="logoutLink"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </div>
+
+  <div class="ff-main">
+    <div class="ff-hero d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+      <div>
+        <h2 class="mb-2">Welcome, <span id="heroName">Student</span>!</h2>
+        <p class="text-muted-ff mb-0" style="max-width:480px;">
+          Your feedback helps us improve the quality of our courses and teaching experience.
+        </p>
+      </div>
+      <div class="ff-icon-badge" style="width:72px;height:72px;font-size:2rem;">
+        <i class="bi bi-clipboard2-check-fill"></i>
+      </div>
+    </div>
+
+    <h5 class="mb-3">Your Enrolled Courses</h5>
+    <div id="coursesGrid" class="row g-3">
+      <div class="col-12 text-muted-ff"><i class="bi bi-hourglass-split"></i> Loading your courses...</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/student.js"></script>
+</body>
+</html>

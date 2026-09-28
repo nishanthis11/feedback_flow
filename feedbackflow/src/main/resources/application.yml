@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: feedbackflow
+
+  # ---- Default: H2 in-memory (zero setup, great for demo/dev) ----
+  datasource:
+    url: jdbc:h2:mem:feedbackflow;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  # ---- To use MySQL instead, comment out the H2 block above and use this: ----
+  # datasource:
+  #   url: jdbc:mysql://localhost:3306/feedbackflow?useSSL=false&serverTimezone=UTC
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  #   username: root
+  #   password: yourpassword
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  sql:
+    init:
+      mode: always
+
+app:
+  jwt:
+    # In production, load this from an environment variable / secrets manager, never hard-code.
+    secret: "feedbackflow-super-secret-key-change-me-in-production-minimum-256-bits!!"
+    expiration-ms: 86400000   # 24 hours
+
+logging:
+  level:
+    com.feedbackflow: INFO

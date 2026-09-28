@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FeedbackFlow — Staff Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="ff-navbar">
+  <div class="brand"><i class="bi bi-mortarboard-fill"></i> Course Feedback Collection System</div>
+  <div class="nav-right">
+    <div class="theme-toggle" id="themeToggle">
+      <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+      <div class="theme-switch"></div>
+      <span id="themeLabel" class="small d-none d-sm-inline">Light</span>
+    </div>
+    <span><i class="bi bi-person-circle me-1"></i> <span id="navUserName">...</span></span>
+  </div>
+</div>
+
+<div class="ff-layout">
+  <div class="ff-sidebar">
+    <a href="staff-dashboard.html" class="active"><i class="bi bi-grid-fill"></i> Dashboard</a>
+    <a href="staff-dashboard.html"><i class="bi bi-journal-bookmark-fill"></i> My Courses</a>
+    <a href="#"><i class="bi bi-bar-chart-fill"></i> Performance</a>
+    <a href="#" id="logoutLink"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </div>
+
+  <div class="ff-main">
+    <h4 class="mb-3">Faculty Performance Overview</h4>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <div class="ff-stat-card">
+          <div class="stat-icon" style="background:rgba(47,111,237,0.12); color:var(--accent);"><i class="bi bi-journal-bookmark-fill"></i></div>
+          <div><div class="stat-value" id="statCourses">—</div><div class="stat-label">Courses Taught</div></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ff-stat-card">
+          <div class="stat-icon" style="background:rgba(31,169,113,0.12); color:var(--success);"><i class="bi bi-star-fill"></i></div>
+          <div><div class="stat-value" id="statAvg">—</div><div class="stat-label">Overall Average Rating</div></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ff-stat-card">
+          <div class="stat-icon" style="background:rgba(245,166,35,0.15); color:var(--warning);"><i class="bi bi-people-fill"></i></div>
+          <div><div class="stat-value" id="statSubmissions">—</div><div class="stat-label">Total Responses</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ff-card mb-4">
+      <h6 class="mb-3">Course-wise Average Rating</h6>
+      <div id="courseChart" class="row g-3"></div>
+    </div>
+
+    <div class="ff-card">
+      <h6 class="mb-3">My Courses</h6>
+      <div class="table-responsive">
+        <table class="ff-table">
+          <thead><tr><th>Course</th><th>Code</th><th>Avg Rating</th><th>Responses</th><th></th></tr></thead>
+          <tbody id="myCoursesBody"><tr><td colspan="5" class="text-muted-ff">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ff-card mt-4" id="questionSummaryCard" style="display:none;">
+      <h6 class="mb-3">Question-wise Averages — <span id="qSummaryFormTitle"></span></h6>
+      <div id="questionSummaryBody"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/staff.js"></script>
+</body>
+</html>

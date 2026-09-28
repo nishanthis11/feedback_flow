@@ -1,0 +1,32 @@
+# Java/Maven
+**/target/
+**/bin/
+**/out/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven wrapper
+.mvn/
+.mvnw
+mvnw.cmd
+
+# Spring Boot
+application-local.properties
+application-dev.properties
+
+# Node (if ever added)
+node_modules/
